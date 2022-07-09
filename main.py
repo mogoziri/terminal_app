@@ -1,8 +1,15 @@
 from image_processing import grayscale, rotate, resize
+from file_utils import list_image_files, is_image_file
 
-grayscale("./test/picture_1.jpeg")
+# grayscale("./test/picture_1.jpeg")
+#
+# rotate("./test/picture_1.jpeg")
+#
+# resize("./test/picture_1.jpeg", (500, 500))
 
-rotate("./test/picture_1.jpeg")
+list_image_files("./test")
+print(list_image_files("./test"))
 
-resize("./test/picture_1.jpeg")
+is_image_file("./test/picture_1.jpeg")
+print(is_image_file("./test/picture_1.txt"))
 
