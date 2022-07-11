@@ -20,10 +20,11 @@ def rotate(path_to_file):
     rotated_image.show()
 
 
-def resize(path_to_file, bounding_box):
+def resize(path_to_file):
     # creating an og_image object
     og_image = Image.open(path_to_file)
-
+    w, h = og_image.size
+    bounding_box = (int(w/2), int(h/2))
     # applying resizing method
     resized_image = ImageOps.fit(og_image, bounding_box)
     resized_image.show()

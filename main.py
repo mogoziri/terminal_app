@@ -6,16 +6,18 @@ import argparse
 #
 # rotate("./test/picture_1.jpeg")
 #
-# resize("./test/picture_1.jpeg", (500, 500))
+resize("./test/picture_1.jpeg")
 
-# list_image_files("./test")
-# print(list_image_files("./test"))
+
 #
 # is_image_file("./test/picture_1.jpeg")
 # print(is_image_file("./test/picture_1.txt"))
 
 parser = argparse.ArgumentParser(description="Photo Processor")
-parser.add_argument("--directory", help="directory help")
+parser.add_argument("--directory", required=True)
+parser.add_argument("--operation", choices=["grayscale", "rotate", "resize"], nargs="+", required=True)
 args = parser.parse_args()
-print(args)
+
+image_files = list_image_files(args.directory)
+print(image_files)
 
