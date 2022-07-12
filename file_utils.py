@@ -16,3 +16,8 @@ def is_image_file(file):
         return True
     else:
         return False
+
+
+def create_destination_path(source_path, destination_path):
+    source_name = Path(source_path).name
+    return Path(destination_path, source_name)

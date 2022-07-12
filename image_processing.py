@@ -8,7 +8,7 @@ def grayscale(path_to_file):
 
     # applying grayscale method
     gray_image = ImageOps.grayscale(og_image)
-    gray_image.show()
+    return gray_image
 
 
 def rotate(path_to_file):
