@@ -1,30 +1,22 @@
 # Importing Image and ImageOps module from PIL package
-from PIL import Image, ImageOps
+from PIL import ImageOps
 
 
-def grayscale(path_to_file):
-    # creating an og_image object
-    og_image = Image.open(path_to_file)
-
+def grayscale(image):
     # applying grayscale method
-    gray_image = ImageOps.grayscale(og_image)
+    gray_image = ImageOps.grayscale(image)
     return gray_image
 
 
-def rotate(path_to_file):
-    # creating an og_image object
-    og_image = Image.open(path_to_file)
-
+def rotate(image):
     # applying rotation method
-    rotated_image = og_image.rotate(90)
-    rotated_image.show()
+    rotated_image = image.rotate(90)
+    return rotated_image
 
 
-def resize(path_to_file):
-    # creating an og_image object
-    og_image = Image.open(path_to_file)
-    w, h = og_image.size
+def resize(image):
+    w, h = image.size
     bounding_box = (int(w/2), int(h/2))
     # applying resizing method
-    resized_image = ImageOps.fit(og_image, bounding_box)
-    resized_image.show()
+    resized_image = ImageOps.fit(image, bounding_box)
+    return resized_image
