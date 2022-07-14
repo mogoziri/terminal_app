@@ -20,3 +20,14 @@ def resize(image):
     # applying resizing method
     resized_image = ImageOps.fit(image, bounding_box)
     return resized_image
+
+
+def apply_transformation(image, op):
+    if op == "grayscale":
+        return grayscale(image)
+    elif op == "rotate":
+        return rotate(image)
+    elif op == "resize":
+        return resize(image)
+    else:
+        print("unknown operation")
