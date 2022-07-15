@@ -8,7 +8,7 @@ from PIL import Image
 parser = argparse.ArgumentParser(description="Photo Processor")
 parser.add_argument("--source_directory", required=True)
 parser.add_argument("--destination_directory", required=True)
-parser.add_argument("--operation", choices=["grayscale", "rotate", "resize"], nargs="+", required=True)
+parser.add_argument("--operation", choices=["grayscale", "rotate", "resize", "blur"], nargs="+", required=True)
 args = parser.parse_args()
 
 image_files = list_image_files(args.source_directory)
