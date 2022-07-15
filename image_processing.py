@@ -34,6 +34,11 @@ def flip(image):
     return flipped_image
 
 
+def contour(image):
+    # applying contour method
+    contour_image = image.filter(ImageFilter.CONTOUR)
+    return contour_image
+
 def apply_transformation(image, op):
     if op == "grayscale":
         return grayscale(image)
@@ -45,5 +50,7 @@ def apply_transformation(image, op):
         return blur(image)
     elif op == "flip":
         return flip(image)
+    elif op == "contour":
+        return contour(image)
     else:
         print("unknown operation")
