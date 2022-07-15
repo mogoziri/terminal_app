@@ -1,5 +1,5 @@
 # Importing Image and ImageOps module from PIL package
-from PIL import ImageOps, ImageFilter
+from PIL import ImageOps, ImageFilter, Image
 
 
 def grayscale(image):
@@ -28,6 +28,12 @@ def blur(image):
     return blur_image
 
 
+def flip(image):
+    # applying flip method
+    flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
+    return flipped_image
+
+
 def apply_transformation(image, op):
     if op == "grayscale":
         return grayscale(image)
@@ -37,5 +43,7 @@ def apply_transformation(image, op):
         return resize(image)
     elif op == "blur":
         return blur(image)
+    elif op == "flip":
+        return flip(image)
     else:
         print("unknown operation")
