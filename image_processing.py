@@ -47,9 +47,15 @@ def invert(image):
 
 
 def detail(image):
-    # applying contour method
+    # applying detail method
     detailed_image = image.filter(ImageFilter.DETAIL)
     return detailed_image
+
+
+def sharpen(image):
+    # applying contour method
+    sharpened_image = image.filter(ImageFilter.SHARPEN)
+    return sharpened_image
 
 
 def apply_transformation(image, op):
@@ -69,5 +75,7 @@ def apply_transformation(image, op):
         return invert(image)
     elif op == "detail":
         return detail(image)
+    elif op == "sharpen":
+        return sharpen(image)
     else:
         print("unknown operation")
