@@ -55,15 +55,17 @@ Command line arguments description:
 ### Testing
 **Test #1 scenario** 
 
-We run application with no parameters and it returns an error with required arguments description. 
-Next time, we indicate all arguments such as source directory, destination directory and required operations (rotation and grayscale effect). This time test runs correctly.
+Run application with no parameters and it returns an error with required arguments description. 
+Next time, specify all arguments such as source directory, destination directory and required operations (rotation and grayscale effect). This time test runs correctly.
 
 **Test #2 scenario**
 
-We run application without different arguments.
-First case, I run a non-existent operation "bright".
-Second case, I miss a source directory argument.
-Third case, I miss a destination directory argument.
+Run application with missing arguments to check error handling.
+
+- First case, specify a non-existent operation `bright`.
+- Second case, missing a source directory argument.
+- Third case, missing a destination directory argument.
+
 In all cases it returns an error requesting missing parameters.
 
 ### Reference List
