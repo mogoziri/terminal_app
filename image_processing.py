@@ -16,7 +16,7 @@ def rotate(image):
 
 def resize(image):
     w, h = image.size
-    bounding_box = (int(w/2), int(h/2))
+    bounding_box = (int(w / 2), int(h / 2))
     # applying resizing method
     resized_image = ImageOps.fit(image, bounding_box)
     return resized_image

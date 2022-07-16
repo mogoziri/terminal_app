@@ -8,7 +8,20 @@ from PIL import Image
 parser = argparse.ArgumentParser(description="Photo Processor")
 parser.add_argument("--source_directory", required=True)
 parser.add_argument("--destination_directory", required=True)
-parser.add_argument("--operation", choices=["grayscale", "rotate", "resize", "blur", "flip", "contour", "invert", "detail", "sharpen"], nargs="+", required=True)
+parser.add_argument(
+    "--operation",
+    choices=[
+        "grayscale",
+        "rotate",
+        "resize",
+        "blur",
+        "flip",
+        "contour",
+        "invert",
+        "detail",
+        "sharpen"],
+    nargs="+",
+    required=True)
 args = parser.parse_args()
 
 image_files = list_image_files(args.source_directory)
@@ -20,7 +33,9 @@ for image_file in image_files:
     image = Image.open(image_file)
     for op in args.operation:
         image = apply_transformation(image, op)
-    destination_path = create_destination_path(image_file, args.destination_directory)
+    destination_path = create_destination_path(
+        image_file, args.destination_directory)
     image.save(destination_path)
 
-print(f"Files processed: {len(image_files)}\nDestination folder: {Path(args.destination_directory).resolve()}")
+print(
+    f"Files processed: {len(image_files)}\nDestination folder: {Path(args.destination_directory).resolve()}")
