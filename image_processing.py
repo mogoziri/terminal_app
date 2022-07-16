@@ -45,6 +45,13 @@ def invert(image):
     inverted_image = ImageOps.invert(image)
     return inverted_image
 
+
+def detail(image):
+    # applying contour method
+    detailed_image = image.filter(ImageFilter.DETAIL)
+    return detailed_image
+
+
 def apply_transformation(image, op):
     if op == "grayscale":
         return grayscale(image)
@@ -60,5 +67,7 @@ def apply_transformation(image, op):
         return contour(image)
     elif op == "invert":
         return invert(image)
+    elif op == "detail":
+        return detail(image)
     else:
         print("unknown operation")
