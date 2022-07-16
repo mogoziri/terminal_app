@@ -1,15 +1,30 @@
-# Importing Image and ImageOps module from PIL package
 from PIL import ImageOps, ImageFilter, Image
 
 
 def grayscale(image):
-    # applying grayscale method
+    """
+    Applies grayscale method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+         transformed image into black and white variant
+    """
     gray_image = ImageOps.grayscale(image)
     return gray_image
 
 
 def rotate(image):
-    # applying rotation method
+    """
+    Applies rotation method
+
+    Arguments:
+        image: source image file
+
+    Returns:
+        rotated image to 90 degrees counterclockwise
+    """
     rotated_image = image.rotate(90)
     return rotated_image
 
@@ -17,43 +32,99 @@ def rotate(image):
 def resize(image):
     w, h = image.size
     bounding_box = (int(w / 2), int(h / 2))
-    # applying resizing method
+    """
+    Applies resize method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        resized image 2 times smaller keeping the aspect ratio
+    """
     resized_image = ImageOps.fit(image, bounding_box)
     return resized_image
 
 
 def blur(image):
-    # applying blur method
+    """
+    Applies blur method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        blurred image
+    """
     blur_image = image.filter(ImageFilter.BLUR)
     return blur_image
 
 
 def flip(image):
-    # applying flip method
+    """
+    Applies flip method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+         flipped image horizontally
+    """
     flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
     return flipped_image
 
 
 def contour(image):
-    # applying contour method
+    """
+    Applies contour method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        image with contour effect
+    """
     contour_image = image.filter(ImageFilter.CONTOUR)
     return contour_image
 
 
 def invert(image):
-    # applying invert method
+    """
+    Applies invert method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        inverted image
+    """
     inverted_image = ImageOps.invert(image)
     return inverted_image
 
 
 def detail(image):
-    # applying detail method
+    """
+    Applies detail method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        image with detail effect
+    """
     detailed_image = image.filter(ImageFilter.DETAIL)
     return detailed_image
 
 
 def sharpen(image):
-    # applying contour method
+    """
+    Applies sharpen method
+
+    Arguments:
+        image : source image file
+
+    Returns:
+        image with sharpen effect
+    """
     sharpened_image = image.filter(ImageFilter.SHARPEN)
     return sharpened_image
 
