@@ -27,7 +27,15 @@ The implementation plan was created using a Trello Board in a web-based list-mak
 
 Photo Processor implementation plan (main board):
 
+<img width="1149" alt="Trello Board Screenshot" src="https://user-images.githubusercontent.com/105526692/179375622-c06e08b8-cd99-4469-8d2b-73eab1323f5d.png">
+
+Resize feature checklist:
+
+<img width="767" alt="Resize feature checklist" src="https://user-images.githubusercontent.com/105526692/179375634-dde8a8e4-a12c-4bc1-8476-2f096f7a7e05.png">
+
 ### Control Flow Diagram 
+
+<img width="429" alt="Control Flow Diagram" src="https://user-images.githubusercontent.com/105526692/179375640-736f76a5-4e85-4da1-997d-a1b289e19d34.png">
 
 ### Style Guide
 PEP8 Style Guide for Python Code
@@ -60,6 +68,8 @@ Command line arguments description:
 Run application with no parameters and it returns an error with required arguments description. 
 Next time, specify all arguments such as source directory, destination directory and required operations (rotation and grayscale effect). This time test runs correctly.
 
+![Test#1](https://user-images.githubusercontent.com/105526692/179375666-4ac23d99-b401-49a5-8978-e1e9a8219ee2.png)
+
 **Test #2 scenario**
 
 Run application with missing arguments to check error handling.
@@ -69,6 +79,8 @@ Run application with missing arguments to check error handling.
 - Third case, missing a destination directory argument.
 
 In all cases it returns an error requesting missing parameters.
+
+![Test#2](https://user-images.githubusercontent.com/105526692/179375674-8946807d-25fd-48c9-9246-2dcdb781975d.png)
 
 ### Reference List
 van Rossum, G., Warsaw, B. and Coghlan, N. (2001). _Style Guide for Python Code_. [online] GitHub. Available at: https://github.com/python/peps/blob/main/pep-0008.txt [Accessed 10 Jul. 2022].
