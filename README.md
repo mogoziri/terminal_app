@@ -27,6 +27,8 @@ The implementation plan was created using a Trello Board in a web-based list-mak
 
 Photo Processor implementation plan (main board):
 
+### Control Flow Diagram 
+
 ### Style Guide
 PEP8 Style Guide for Python Code
 
